@@ -3,7 +3,19 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Md Zaki Zafar | CSE Student & Full Stack Developer</title>
+<meta name="description" content="Md Zaki Zafar is a Data Science and AI Developer building intelligent systems, analytics applications, and full-stack products."/>
+<meta name="theme-color" content="#060610"/>
+<link rel="canonical" href="https://portfolio-zaki-zeta.vercel.app/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://portfolio-zaki-zeta.vercel.app/"/>
+<meta property="og:title" content="Md Zaki Zafar | Data Science &amp; AI Developer"/>
+<meta property="og:description" content="Portfolio of Md Zaki Zafar, a Data Science and AI Developer building intelligent systems, analytics applications, and full-stack products."/>
+<meta property="og:image" content="https://portfolio-zaki-zeta.vercel.app/profile-photo.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Md Zaki Zafar | Data Science &amp; AI Developer"/>
+<meta name="twitter:description" content="Data Science, AI, analytics, and full-stack projects by Md Zaki Zafar."/>
+<meta name="twitter:image" content="https://portfolio-zaki-zeta.vercel.app/profile-photo.jpg"/>
+<title>Md Zaki Zafar | Data Science &amp; AI Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600&family=Fraunces:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet"/>
 <style>
 /* ════════════════════════════════════════
@@ -25,7 +37,7 @@
   --txt:#f0f0ff;          /* near-white with cool tint  */
   --txt2:#c8c8ef;         /* secondary text             */
   --txt3:#8888b8;         /* muted text                 */
-  --txt4:#5555888;        /* very muted                 */
+  --txt4:#555588;         /* very muted                 */
   /* Accents */
   --cyan:#00e5ff;
   --cyan2:#00bcd4;
@@ -46,6 +58,9 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;font-size:16px;}
 body{background:var(--bg0);color:var(--txt);font-family:'Outfit',sans-serif;overflow-x:hidden;cursor:none;line-height:1.6;}
+main{display:block;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;}
 
 /* ════════════════════════════════════════
    CUSTOM CURSOR
@@ -98,6 +113,8 @@ nav.stuck{
   transition:opacity .2s,transform .2s;
 }
 .nbtn:hover{opacity:.85;transform:translateY(-2px);}
+.nav-toggle{display:none;width:40px;height:36px;border:1px solid var(--b2);background:transparent;color:var(--txt);font:600 .7rem 'Fira Code',monospace;cursor:pointer;}
+.nav-toggle:hover,.nav-toggle:focus-visible{border-color:var(--cyan);color:var(--cyan);}
 
 /* ════════════════════════════════════════
    HERO  (Section 01)
@@ -381,52 +398,55 @@ section{position:relative;z-index:2;}
    SKILLS  (Section 03)
 ════════════════════════════════════════ */
 #skills{background:var(--bg0);}
-.sk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1);}
 .sk-card{
-  background:var(--card);border:1px solid var(--b1);
-  padding:1.5rem;position:relative;overflow:hidden;
-  transition:all .3s;transform-style:preserve-3d;cursor:default;
+  background:var(--card);padding:1.45rem;position:relative;overflow:hidden;
+  transition:background .3s,transform .3s;cursor:default;
 }
 .sk-card::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(to right,var(--cyan),var(--violet));
-  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+  content:'';position:absolute;top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(to right,var(--cyan),var(--violet));transform:scaleX(0);
+  transform-origin:left;transition:transform .3s;
 }
-.sk-card:hover{border-color:rgba(0,229,255,.35);transform:translateY(-5px);box-shadow:0 12px 40px rgba(0,229,255,.08);}
+.sk-card:hover{background:var(--card2);transform:translateY(-4px);box-shadow:0 16px 35px rgba(0,0,0,.25);z-index:1;}
 .sk-card:hover::after{transform:scaleX(1);}
-.sk-icon{font-size:1.4rem;margin-bottom:.65rem;}
+.sk-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;}
+.sk-icon{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;border:1px solid rgba(0,229,255,.28);color:var(--cyan);font:600 .67rem 'Fira Code',monospace;}
+.sk-index{color:var(--txt3);font:500 .58rem 'Fira Code',monospace;letter-spacing:.08em;}
 .sk-cat{
-  font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--cyan);margin-bottom:.75rem;
+  font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;line-height:1.25;
+  color:var(--txt);margin-bottom:.9rem;
 }
-.sk-tags{display:flex;flex-wrap:wrap;gap:.35rem;}
+.sk-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
 .stag{
-  font-size:.65rem;font-weight:500;padding:.22rem .6rem;
-  background:rgba(255,255,255,.04);border:1px solid var(--b2);
-  color:var(--txt2);letter-spacing:.03em;transition:all .15s;
+  font-size:.67rem;font-weight:500;padding:.32rem .58rem;background:rgba(255,255,255,.035);
+  border:1px solid var(--b2);color:var(--txt2);letter-spacing:.02em;transition:all .15s;
 }
 .sk-card:hover .stag{border-color:rgba(0,229,255,.28);color:var(--txt);}
-.stag.learning{border-color:rgba(167,139,250,.3);color:var(--violet);}
+.sk-card:nth-child(3n) .sk-icon{border-color:rgba(167,139,250,.34);color:var(--violet);}
+.sk-card:nth-child(3n) .stag{border-color:rgba(167,139,250,.22);}
 
 /* ════════════════════════════════════════
    PROJECTS  (Section 04)
 ════════════════════════════════════════ */
 #projects{background:var(--bg1);border-top:1px solid var(--b1);}
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.proj-card{
-  background:var(--card);border:1px solid var(--b1);
-  display:flex;flex-direction:column;
-  transition:all .32s;position:relative;overflow:hidden;
-}
-.proj-card::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(0,229,255,.04),rgba(167,139,250,.03));
-  opacity:0;transition:opacity .3s;
-}
-.proj-card:hover{border-color:rgba(0,229,255,.35);transform:translateY(-7px);box-shadow:0 22px 55px rgba(0,0,0,.55);}
-.proj-card:hover::before{opacity:1;}
-.proj-body{padding:1.5rem 1.5rem 1rem;flex:1;}
-.proj-top-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.3rem;}
+.project-showcase{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;}
+.proj-card{grid-column:span 2;background:var(--card);border:1px solid var(--b1);display:flex;flex-direction:column;transition:all .32s;position:relative;overflow:hidden;}
+.proj-card.featured{grid-column:span 2;}
+.proj-card:hover{border-color:rgba(0,229,255,.42);transform:translateY(-6px);box-shadow:0 22px 55px rgba(0,0,0,.5);}
+.project-media{height:150px;position:relative;overflow:hidden;border-bottom:1px solid var(--b1);background:#09091a;}
+.proj-card.featured .project-media{height:180px;}
+.project-media img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(1.08);transition:transform .5s ease,filter .3s ease;}
+.proj-card:hover .project-media img{transform:scale(1.04);filter:saturate(1) contrast(1.08);}
+.project-media::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,255,.18),transparent 48%,rgba(167,139,250,.16));mix-blend-mode:screen;pointer-events:none;}
+.project-media.ai-visual,.project-media.learning-visual{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 72% 25%,rgba(0,229,255,.18),transparent 34%),#09091a;}
+.project-media.ai-visual::before{content:'INCIDENT  →  EVIDENCE  →  DECISION  →  VERIFY';color:var(--cyan);font:500 .58rem 'Fira Code',monospace;letter-spacing:.08em;border:1px solid rgba(0,229,255,.3);padding:.85rem .7rem;box-shadow:0 0 30px rgba(0,229,255,.08);}
+.project-media.learning-visual::before{content:'TOPIC  +  ADAPTIVE QUIZ  +  FEEDBACK';color:var(--violet);font:500 .58rem 'Fira Code',monospace;letter-spacing:.08em;border:1px solid rgba(167,139,250,.35);padding:.85rem .7rem;box-shadow:0 0 30px rgba(167,139,250,.1);}
+.project-media.ev-visual{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 72% 25%,rgba(16,240,122,.16),transparent 34%),#09091a;}
+.project-media.ev-visual::before{content:'EV  /  POWER BI  /  DATA ANALYTICS';color:var(--green);font:500 .58rem 'Fira Code',monospace;letter-spacing:.08em;border:1px solid rgba(16,240,122,.3);padding:.85rem .7rem;box-shadow:0 0 30px rgba(16,240,122,.08);}
+.project-media-label{position:absolute;left:.9rem;bottom:.75rem;z-index:1;color:var(--txt2);font:500 .58rem 'Fira Code',monospace;letter-spacing:.08em;text-transform:uppercase;background:rgba(6,6,16,.84);padding:.35rem .5rem;}
+.proj-body{padding:1.35rem 1.35rem 1rem;flex:1;}
+.proj-top-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.65rem;}
 .proj-idx{
   font-family:'Fira Code',monospace;font-size:.62rem;font-weight:600;
   color:var(--txt3);letter-spacing:.1em;
@@ -442,31 +462,57 @@ section{position:relative;z-index:2;}
 .plink:hover{border-color:var(--cyan);color:var(--cyan);}
 .proj-title{
   font-family:'Fraunces',serif;font-weight:700;
-  font-size:1.05rem;line-height:1.3;
+  font-size:1.12rem;line-height:1.25;
   color:var(--txt);margin-bottom:.6rem;
   transition:color .2s;
 }
 .proj-card:hover .proj-title{color:var(--cyan);}
+.project-problem{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.35rem;}
 .proj-desc{
-  font-size:.78rem;font-weight:400;color:var(--txt3);
-  line-height:1.7;margin-bottom:.75rem;
+  font-size:.78rem;font-weight:400;color:var(--txt2);line-height:1.7;margin-bottom:.85rem;
 }
-.proj-feats{list-style:none;display:flex;flex-direction:column;gap:.22rem;margin-bottom:.6rem;}
-.proj-feats li{font-size:.66rem;font-weight:500;color:var(--txt3);padding-left:.9rem;position:relative;line-height:1.5;}
-.proj-feats li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:.55rem;top:.1rem;}
+.project-solution{font-size:.7rem;color:var(--txt3);line-height:1.6;margin-bottom:.8rem;}
+.project-solution strong{color:var(--txt2);font-weight:600;}
 .proj-foot{
-  padding:.85rem 1.5rem 1.2rem;
+  padding:.85rem 1.35rem 1.2rem;
   border-top:1px solid var(--b1);
   display:flex;flex-direction:column;gap:.5rem;
 }
 .proj-date{font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);}
 .proj-stack{display:flex;flex-wrap:wrap;gap:.3rem;}
 .pchip{
-  font-size:.6rem;font-weight:500;padding:.18rem .55rem;
+  font-size:.6rem;font-weight:500;padding:.22rem .55rem;
   border:1px solid var(--b2);color:var(--txt3);letter-spacing:.04em;
   transition:all .18s;
 }
 .proj-card:hover .pchip{border-color:rgba(0,229,255,.25);color:var(--txt2);}
+.project-actions{display:flex;gap:.45rem;margin-top:.35rem;}
+.project-action{display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:.35rem .6rem;border:1px solid var(--b2);color:var(--txt3);font:600 .58rem 'Fira Code',monospace;letter-spacing:.06em;text-decoration:none;transition:all .2s;}
+.project-action:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,.06);}
+.project-action.primary{border-color:rgba(0,229,255,.32);color:var(--cyan);}
+.details-trigger{background:none;cursor:pointer;}
+
+/* Project details modal */
+.project-modal[hidden]{display:none;}
+.project-modal{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;padding:1.25rem;background:rgba(3,3,10,.78);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease;}
+.project-modal.is-open{opacity:1;visibility:visible;}
+.project-modal-panel{width:min(100%,680px);max-height:min(760px,calc(100vh - 2.5rem));overflow:auto;background:var(--card);border:1px solid var(--b2);box-shadow:0 28px 90px rgba(0,0,0,.6);transform:translateY(18px) scale(.98);transition:transform .3s cubic-bezier(.16,1,.3,1);}
+.project-modal.is-open .project-modal-panel{transform:translateY(0) scale(1);}
+.project-modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.35rem 1.5rem 1.1rem;border-bottom:1px solid var(--b1);background:linear-gradient(135deg,rgba(0,229,255,.07),transparent 55%);}
+.project-modal-kicker{color:var(--cyan);font:600 .6rem 'Fira Code',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.45rem;}
+.project-modal-title{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.1;color:var(--txt);}
+.project-modal-close{width:34px;height:34px;flex-shrink:0;border:1px solid var(--b2);background:transparent;color:var(--txt2);font-size:1.25rem;line-height:1;cursor:pointer;transition:all .2s;}
+.project-modal-close:hover,.project-modal-close:focus-visible{border-color:var(--cyan);color:var(--cyan);outline:none;}
+.project-modal-body{padding:1.4rem 1.5rem 1.5rem;}
+.project-modal-section{margin-bottom:1.2rem;}
+.project-modal-label{color:var(--green);font:700 .6rem 'Fira Code',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.4rem;}
+.project-modal-copy{color:var(--txt2);font-size:.86rem;line-height:1.75;}
+.project-modal-features{display:grid;grid-template-columns:1fr 1fr;gap:.45rem .8rem;padding:0;margin:0;list-style:none;}
+.project-modal-features li{position:relative;padding-left:1rem;color:var(--txt2);font-size:.75rem;line-height:1.5;}
+.project-modal-features li::before{content:'+';position:absolute;left:0;color:var(--cyan);font-family:'Fira Code',monospace;}
+.project-modal-stack{display:flex;flex-wrap:wrap;gap:.4rem;}
+.project-modal-actions{display:flex;gap:.55rem;flex-wrap:wrap;padding-top:1.2rem;border-top:1px solid var(--b1);}
+body.modal-open{overflow:hidden;}
 
 /* ════════════════════════════════════════
    EXPERIENCE  (Section 05)
@@ -621,36 +667,30 @@ section{position:relative;z-index:2;}
 }
 
 /* ════════════════════════════════════════
-   OPEN SOURCE  (Section 09)
+   GITHUB  (Section 09)
 ════════════════════════════════════════ */
-#opensource{background:var(--bg0);}
-.os-note{
-  display:flex;align-items:flex-start;gap:.9rem;
-  background:rgba(167,139,250,.07);border:1px solid rgba(167,139,250,.2);
-  padding:1rem 1.4rem;margin-bottom:2rem;
-}
-.os-note-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;}
-.os-note p{font-size:.78rem;font-weight:400;color:var(--txt2);line-height:1.7;}
-.os-note strong{color:var(--violet);font-weight:700;}
-.os-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.8rem;}
-.os-card{
-  background:var(--card);border:1px solid var(--b1);
-  padding:1.5rem;transition:all .28s;
-}
-.os-card:hover{border-color:rgba(167,139,250,.35);transform:translateY(-4px);}
-.os-icon{font-size:1.3rem;margin-bottom:.6rem;}
-.os-title{font-size:.78rem;font-weight:700;color:var(--violet);margin-bottom:.4rem;}
-.os-desc{font-size:.68rem;font-weight:400;color:var(--txt3);line-height:1.65;}
-.os-cta{
-  background:var(--card);border:1px solid var(--b1);
-  padding:1.8rem 2rem;text-align:center;
-}
-.os-quote{
-  font-family:'Fraunces',serif;font-style:italic;
-  font-size:1.05rem;color:var(--txt2);margin-bottom:1.3rem;
-}
-.os-quote span{color:var(--cyan);}
-.os-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;}
+#github{background:var(--bg0);}
+.github-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:1rem;align-items:stretch;}
+.github-intro,.github-activity{background:var(--card);border:1px solid var(--b1);padding:1.6rem;}
+.github-mark{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;color:var(--cyan);font:600 .68rem 'Fira Code',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.github-mark-icon{display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;border:1px solid rgba(0,229,255,.3);font-size:1rem;color:var(--txt);}
+.github-heading{font-family:'Fraunces',serif;font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.05;color:var(--txt);margin-bottom:.8rem;}
+.github-copy{max-width:520px;color:var(--txt2);font-size:.82rem;line-height:1.75;margin-bottom:1.25rem;}
+.github-copy strong{color:var(--txt);font-weight:600;}
+.github-repos{display:grid;grid-template-columns:repeat(2,1fr);gap:.55rem;margin-bottom:1.3rem;}
+.github-repo{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.65rem .7rem;border:1px solid var(--b1);color:var(--txt2);text-decoration:none;font-size:.68rem;transition:all .2s;}
+.github-repo:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,.05);}
+.github-repo span:last-child{color:var(--txt3);font:500 .6rem 'Fira Code',monospace;white-space:nowrap;}
+.github-profile-button{display:inline-flex;align-items:center;gap:.55rem;}
+.github-activity-title{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem;color:var(--txt);font-family:'Fraunces',serif;font-size:1.15rem;}
+.github-activity-label{color:var(--green);font:600 .56rem 'Fira Code',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.github-activity-copy{color:var(--txt3);font-size:.7rem;line-height:1.65;margin-bottom:1.1rem;}
+.github-activity-list{display:flex;flex-direction:column;gap:.7rem;}
+.github-activity-row{display:grid;grid-template-columns:10px 1fr auto;gap:.65rem;align-items:center;color:var(--txt2);font-size:.7rem;}
+.github-activity-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(0,229,255,.08);}
+.github-activity-row:nth-child(2) .github-activity-dot,.github-activity-row:nth-child(4) .github-activity-dot{background:var(--violet);box-shadow:0 0 0 4px rgba(167,139,250,.08);}
+.github-activity-row span:last-child{color:var(--txt3);font:500 .58rem 'Fira Code',monospace;}
+.github-activity-note{margin-top:1.15rem;padding-top:.9rem;border-top:1px solid var(--b1);color:var(--txt3);font-size:.62rem;line-height:1.6;}
 
 /* ════════════════════════════════════════
    CONTACT  (Section 10)
@@ -743,6 +783,16 @@ footer a:hover{color:var(--cyan);}
 .footer-links{display:flex;gap:1.5rem;}
 .footer-grad{background:var(--grad-head);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;}
 
+@media (pointer:coarse){
+  body{cursor:auto;}
+  #cdot,#cring{display:none;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important;}
+}
+
 /* ════════════════════════════════════════
    ANIMATIONS & REVEAL
 ════════════════════════════════════════ */
@@ -755,21 +805,93 @@ footer a:hover{color:var(--cyan);}
 /* ════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════ */
+.hero-premium{
+  min-height:100vh;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+  align-items:center;gap:clamp(2rem,6vw,7rem);max-width:1320px;margin:0 auto;
+  padding:8.5rem 3.5rem 5rem;position:relative;
+}
+.hero-premium::before{content:'';position:absolute;width:clamp(280px,34vw,520px);height:clamp(280px,34vw,520px);right:4%;top:16%;border:1px solid rgba(0,229,255,.13);border-radius:50%;box-shadow:0 0 0 34px rgba(0,229,255,.025),0 0 0 68px rgba(167,139,250,.018);pointer-events:none;}
+.hero-premium::after{content:'';position:absolute;inset:8rem 3.5rem 4rem;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(90deg,transparent 0%,black 35%,black 85%,transparent 100%);opacity:.24;pointer-events:none;}
+.hero-copy,.hero-visual{position:relative;z-index:1;}
+.hero-kicker{display:flex;align-items:center;gap:.65rem;color:var(--green);font-family:'Fira Code',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeUp .6s ease .1s forwards;}
+.hero-kicker::before{content:'';width:28px;height:1px;background:var(--green);}
+.hero-premium h1{max-width:780px;font-family:'Fraunces',serif;font-size:clamp(3.8rem,8vw,7.8rem);font-weight:900;line-height:.88;letter-spacing:-.045em;margin:0 0 1.5rem;opacity:0;animation:fadeUp .8s ease .2s forwards;}
+.hero-premium h1 .hero-name-line{display:block;color:var(--txt);}
+.hero-premium h1 .hero-name-accent{display:block;background:var(--grad-head);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-primary-role{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;font-family:'Fira Code',monospace;font-size:clamp(.85rem,1.7vw,1.05rem);color:var(--txt2);margin-bottom:1.35rem;opacity:0;animation:fadeUp .7s ease .35s forwards;}
+.hero-primary-role::before{content:'01';color:var(--cyan);font-size:.68rem;}
+.hero-role-cursor{color:var(--cyan);animation:blink 1.1s step-end infinite;}
+.hero-intro{max-width:570px;color:var(--txt2);font-size:clamp(.98rem,1.5vw,1.12rem);line-height:1.8;margin-bottom:1.7rem;opacity:0;animation:fadeUp .7s ease .48s forwards;}
+.hero-intro strong{color:var(--txt);font-weight:600;}
+.hero-actions{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem;opacity:0;animation:fadeUp .7s ease .62s forwards;}
+.hero-actions .btn-pri,.hero-actions .btn-sec{cursor:none;}
+.hero-socials-premium{display:flex;align-items:center;gap:.55rem;opacity:0;animation:fadeUp .6s ease .78s forwards;}
+.hero-socials-premium::before{content:'CONNECT';color:var(--txt3);font-size:.58rem;letter-spacing:.14em;margin-right:.35rem;}
+.hero-socials-premium .soc{font-size:.65rem;}
+.hero-visual{display:flex;justify-content:center;}
+.hero-profile-panel{width:min(100%,470px);background:rgba(15,15,32,.74);border:1px solid var(--b2);padding:1rem;box-shadow:0 24px 80px rgba(0,0,0,.38);backdrop-filter:blur(12px);opacity:0;animation:fadeUp .85s ease .35s forwards;}
+.hero-profile-top{display:flex;align-items:center;justify-content:space-between;padding:.2rem .2rem .9rem;color:var(--txt3);font:500 .6rem 'Fira Code',monospace;letter-spacing:.08em;text-transform:uppercase;}
+.hero-profile-dots{display:flex;gap:.35rem;}
+.hero-profile-dots span{width:7px;height:7px;border-radius:50%;background:var(--b3);}
+.hero-profile-dots span:first-child{background:var(--cyan);}
+.hero-photo-stage{position:relative;overflow:hidden;aspect-ratio:1/.95;background:#09091a;border:1px solid var(--b1);}
+.hero-photo-stage::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,255,.15),transparent 45%,rgba(167,139,250,.12));mix-blend-mode:screen;pointer-events:none;}
+.hero-photo-stage img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(18%) contrast(1.08);}
+.hero-photo-label{position:absolute;left:1rem;bottom:1rem;z-index:1;padding:.55rem .75rem;background:rgba(6,6,16,.82);border-left:2px solid var(--cyan);font:.65rem 'Fira Code',monospace;color:var(--txt2);}
+.hero-profile-bottom{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:end;padding:1rem .25rem .15rem;}
+.hero-profile-role{color:var(--txt);font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;}
+.hero-profile-meta{color:var(--txt3);font-size:.68rem;line-height:1.65;margin-top:.2rem;}
+.hero-profile-status{display:flex;align-items:center;gap:.45rem;color:var(--green);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;}
+.hero-profile-status span{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(16,240,122,.1);}
 @media(max-width:960px){
   nav{padding:1rem 1.5rem;}
   .nlinks,.nbtn{display:none;}
+  .nav-toggle{display:block;}
+  nav.menu-open{background:rgba(6,6,16,.96);border-bottom:1px solid var(--b1);backdrop-filter:blur(20px);}
+  nav.menu-open .nlinks{position:absolute;top:100%;left:0;right:0;display:flex;flex-direction:column;gap:0;background:rgba(6,6,16,.98);border-bottom:1px solid var(--b1);padding:.5rem 1.5rem 1rem;}
+  nav.menu-open .nlinks a{display:block;padding:.7rem 0;font-size:.68rem;}
+  nav.menu-open .nbtn{display:inline-flex;position:absolute;top:calc(100% + 14.5rem);left:1.5rem;right:1.5rem;justify-content:center;}
   .hero{grid-template-columns:1fr;min-height:auto;}
   .hero-r{display:none;}
   .hero-l{padding:6rem 1.5rem 3rem;border-right:none;}
+  .hero-premium{grid-template-columns:1fr;gap:2.5rem;min-height:auto;padding:7.5rem 1.5rem 4.5rem;}
+  .hero-premium::before{width:280px;height:280px;right:-120px;top:12%;}
+  .hero-premium::after{inset:6.5rem 1.5rem 3.5rem;background-size:32px 32px;}
+  .hero-premium{overflow:hidden;}
+  .hero-visual{display:none;}
   .wrap{padding:4rem 1.5rem;}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:2.2rem;}
-  .sk-grid{grid-template-columns:repeat(2,1fr);}
+  .github-layout{grid-template-columns:1fr;}
+  .skills-grid{grid-template-columns:repeat(2,1fr);}
+  .project-showcase{grid-template-columns:1fr;}
+  .proj-card,.proj-card.featured{grid-column:span 1;}
   .proj-grid,.edu-grid,.ach-grid,.os-grid{grid-template-columns:1fr;}
   .exp-wrap{grid-template-columns:1fr;}
   .exp-l{border-right:none;border-bottom:1px solid var(--b1);}
   .frow{grid-template-columns:1fr;}
   .cl-grid{grid-template-columns:1fr;}
   footer{flex-direction:column;text-align:center;}
+}
+@media(max-width:520px){
+  .hero-premium h1{font-size:clamp(3.45rem,16vw,5rem);}
+  .sh{flex-wrap:wrap;row-gap:.8rem;}
+  .sh-line{order:3;flex-basis:100%;}
+  .sh-tag{margin-left:auto;}
+  .skills-grid{grid-template-columns:1fr;}
+  .project-modal{padding:.65rem;}
+  .project-modal-panel{max-height:calc(100vh - 1.3rem);}
+  .project-modal-head,.project-modal-body{padding-left:1rem;padding-right:1rem;}
+  .project-modal-features{grid-template-columns:1fr;}
+  .github-repos{grid-template-columns:1fr;}
+  .contact-grid>*{min-width:0;}
+  .frow,.finp{min-width:0;}
+  .footer-links{flex-wrap:wrap;justify-content:center;gap:.75rem 1rem;}
+  .hero-actions{align-items:stretch;flex-direction:column;}
+  .hero-actions .btn-pri,.hero-actions .btn-sec{width:100%;text-align:center;}
+  .hero-socials-premium::before{display:none;}
+  .hero-profile-bottom{grid-template-columns:1fr;}
+  .hero-profile-status{justify-self:start;}
+  .proj-card.featured .project-media{height:160px;}
 }
 </style>
 </head>
@@ -780,107 +902,53 @@ footer a:hover{color:var(--cyan);}
 <div id="cring"></div>
 
 <!-- ══════════════════════ NAV ══════════════════════ -->
-<nav id="nav">
-  <a class="nlogo" href="#">MZZ</a>
-  <ul class="nlinks">
+<nav id="nav" aria-label="Primary navigation">
+  <a class="nlogo" href="#main-content" aria-label="Back to top">MZZ</a>
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">MENU</button>
+  <ul class="nlinks" id="primary-navigation">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#certs">Certs</a></li>
-    <li><a href="#opensource">Open Source</a></li>
+    <li><a href="#github">GitHub</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nbtn">Hire Me</a>
 </nav>
 
 <!-- ══════════════════════ HERO (01) ══════════════════════ -->
-<div class="hero" style="position:relative;z-index:2;">
-  <div class="hero-l">
-    <div class="avail"><span class="avail-dot"></span>Open to Internships &amp; Opportunities</div>
-    <h1 class="hero-name">
-      <div class="line1">MD ZAKI</div>
-      <div class="line2">ZAFAR</div>
-    </h1>
-    <div class="hero-title">&lt; <span class="hl">CSE Student</span> | <span class="hl">Full Stack Dev</span> | <span class="hl">Data Enthusiast</span> /&gt;</div>
-    <p class="hero-bio">Building intelligent systems and elegant interfaces — from Java GUI apps to AI-powered platforms and data pipelines. Currently @ LPU, Punjab.</p>
-    <div class="hero-meta">
-      <span class="mchip">📍 Punjab, India</span>
-      <span class="mchip">🎓 B.Tech CSE · 2027</span>
-      <span class="mchip">⭐ CGPA 7.3</span>
-      <span class="mchip">🏆 Top 2% Hackathon</span>
-    </div>
-    <div class="hero-btns">
+<main id="main-content">
+<section class="hero-premium" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <div class="hero-kicker">Portfolio / 2026</div>
+    <h1 id="hero-title" aria-label="Md Zaki Zafar"><span class="hero-name-line">Md Zaki</span><span class="hero-name-accent">Zafar</span></h1>
+    <div class="hero-primary-role"><span id="hero-role">Data Science &amp; AI Developer</span><span class="hero-role-cursor">_</span></div>
+    <p class="hero-intro">I build thoughtful software at the intersection of <strong>data, artificial intelligence, and the web</strong> while growing as a Computer Science and Engineering student.</p>
+    <div class="hero-actions">
       <a href="#projects" class="btn-pri">View Projects</a>
-      <a href="Updated_CV_MDZAKIZAFAR.pdf" download class="btn-sec">Download Resume ↓</a>
+      <a href="Updated_CV_MDZAKIZAFAR.pdf" download class="btn-sec">Download Resume</a>
     </div>
-    <div class="hero-socials">
-      <a href="https://github.com/mdzakizafar" target="_blank" class="soc">GH</a>
-      <a href="https://www.linkedin.com/in/md-zaki-zafar-" target="_blank" class="soc">in</a>
-      <a href="mailto:mdzakizafar7364@gmail.com" class="soc">✉</a>
-      <a href="tel:+917364804400" class="soc">☎</a>
+    <div class="hero-socials-premium" aria-label="Social links">
+      <a href="https://github.com/mdzakizafar" target="_blank" rel="noopener noreferrer" class="soc" aria-label="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/md-zaki-zafar-" target="_blank" rel="noopener noreferrer" class="soc" aria-label="LinkedIn">in</a>
     </div>
   </div>
-
-  <div class="hero-r">
-    <div class="photo-wrap">
-      <div class="photo-frame">
-        <img src="profile-photo.jpg" alt="Md Zaki Zafar">
-        <span class="pf-scan"></span>
-        <span class="pf-corner tl"></span>
-        <span class="pf-corner tr"></span>
-        <span class="pf-corner bl"></span>
-        <span class="pf-corner br"></span>
+  <div class="hero-visual">
+    <div class="hero-profile-panel">
+      <div class="hero-profile-top"><span>zaki.zafar / profile</span><span class="hero-profile-dots" aria-hidden="true"><span></span><span></span><span></span></span></div>
+      <div class="hero-photo-stage">
+        <img src="profile-photo.jpg" alt="Md Zaki Zafar" width="688" height="1525" fetchpriority="high">
+        <div class="hero-photo-label">building with purpose</div>
       </div>
-      <div class="photo-meta">
-        <span class="photo-status"><span class="d"></span>Available</span>
-        <div class="photo-tag"><span class="k">const</span> dev = "Zaki";</div>
-        <div class="photo-tag"><span class="k">location:</span> Punjab, IN</div>
-      </div>
-    </div>
-    <div class="term">
-      <div class="term-bar">
-        <div class="tdot" style="background:#ff5f57;"></div>
-        <div class="tdot" style="background:#febc2e;"></div>
-        <div class="tdot" style="background:#28c840;"></div>
-        <span class="term-title">zafar@portfolio ~ profile.json</span>
-      </div>
-      <div class="term-body">
-        <span class="tl"><span class="tp">❯</span> <span class="tk">cat</span> profile.json</span>
-        <span class="tl">{</span>
-        <span class="tl">&nbsp;&nbsp;<span class="ts">"name"</span>: <span class="tv">"Md Zaki Zafar"</span>,</span>
-        <span class="tl">&nbsp;&nbsp;<span class="ts">"role"</span>: <span class="tv">"CSE Student @ LPU"</span>,</span>
-        <span class="tl">&nbsp;&nbsp;<span class="ts">"cgpa"</span>: <span class="tn">7.35</span>,</span>
-        <span class="tl">&nbsp;&nbsp;<span class="ts">"stack"</span>: [<span class="tv">"Java"</span>, <span class="tv">"React"</span>, <span class="tv">"Python"</span>],</span>
-        <span class="tl">&nbsp;&nbsp;<span class="ts">"cloud"</span>: <span class="tv">"AWS"</span>,</span>
-        <span class="tl">&nbsp;&nbsp;<span class="ts">"certs"</span>: [<span class="tv">"Deloitte"</span>, <span class="tv">"JPMorgan"</span>, <span class="tv">"Google"</span>],</span>
-        <span class="tl">&nbsp;&nbsp;<span class="ts">"hackathon"</span>: <span class="tv">"Top 2% / 500 devs"</span>,</span>
-        <span class="tl">&nbsp;&nbsp;<span class="ts">"open_to"</span>: <span class="tv">"Internships &amp; FTE"</span></span>
-        <span class="tl">}</span>
-        <span class="tl" style="margin-top:.5rem"><span class="tp">❯</span> <span id="ttext" style="color:#c8c8ef;"></span><span class="blink" style="color:#00e5ff;">▋</span></span>
-      </div>
-    </div>
-    <div class="ghcard">
-      <div class="ghcard-top">
-        <span class="ghcard-icon">⌥</span>
-        <span class="ghcard-title">github.com/mdzakizafar</span>
-        <span class="ghcard-badge">● Active</span>
-      </div>
-      <div class="ghstats">
-        <div><div class="ghstat-n">3+</div><div class="ghstat-l">Repos</div></div>
-        <div><div class="ghstat-n">5</div><div class="ghstat-l">Certs</div></div>
-        <div><div class="ghstat-n">2%</div><div class="ghstat-l">Rank</div></div>
-        <div><div class="ghstat-n">7.3</div><div class="ghstat-l">CGPA</div></div>
+      <div class="hero-profile-bottom">
+        <div><div class="hero-profile-role" id="hero-role-label">Data Scientist</div><div class="hero-profile-meta">AI/ML Developer &nbsp;·&nbsp; Full Stack Developer</div></div>
+        <div class="hero-profile-status"><span></span>Open to opportunities</div>
       </div>
     </div>
   </div>
-
-  <div class="scroll-hint">
-    <div class="sline"></div>
-    Scroll
-  </div>
-</div>
+</section>
 
 <!-- ══════════════════════ MARQUEE ══════════════════════ -->
 <div class="mwrap">
@@ -957,50 +1025,46 @@ footer a:hover{color:var(--cyan);}
       <div class="sh-line"></div>
       <div class="sh-tag">Tech Stack</div>
     </div>
-    <div class="sk-grid">
+    <div class="skills-grid">
       <div class="sk-card rev" style="transition-delay:.04s">
-        <div class="sk-icon">☕</div>
-        <div class="sk-cat">Programming Languages</div>
-        <div class="sk-tags"><span class="stag">Java</span><span class="stag">Python</span><span class="stag">C++</span><span class="stag">JavaScript</span></div>
+        <div class="sk-card-top"><div class="sk-icon">01</div><div class="sk-index">CORE</div></div>
+        <div class="sk-cat">Programming</div>
+        <div class="sk-tags"><span class="stag">Java</span><span class="stag">Python</span><span class="stag">JavaScript</span><span class="stag">SQL</span></div>
       </div>
       <div class="sk-card rev" style="transition-delay:.08s">
-        <div class="sk-icon">⚡</div>
-        <div class="sk-cat">Frameworks &amp; Libraries</div>
-        <div class="sk-tags"><span class="stag">React JS</span><span class="stag">Node JS</span><span class="stag">HTML5</span><span class="stag">CSS3</span></div>
+        <div class="sk-card-top"><div class="sk-icon">02</div><div class="sk-index">DATA</div></div>
+        <div class="sk-cat">Data Science</div>
+        <div class="sk-tags"><span class="stag">Pandas</span><span class="stag">NumPy</span><span class="stag">Scikit-learn</span><span class="stag">Matplotlib</span></div>
       </div>
       <div class="sk-card rev" style="transition-delay:.12s">
-        <div class="sk-icon">🗄️</div>
-        <div class="sk-cat">Databases</div>
-        <div class="sk-tags"><span class="stag">MySQL</span><span class="stag">JDBC</span></div>
+        <div class="sk-card-top"><div class="sk-icon">03</div><div class="sk-index">INTEL</div></div>
+        <div class="sk-cat">AI/ML</div>
+        <div class="sk-tags"><span class="stag">Machine Learning</span><span class="stag">Generative AI</span><span class="stag">LLMs</span></div>
       </div>
       <div class="sk-card rev" style="transition-delay:.16s">
-        <div class="sk-icon">☁️</div>
-        <div class="sk-cat">Cloud &amp; DevOps</div>
-        <div class="sk-tags"><span class="stag">AWS EC2</span><span class="stag">AWS S3</span><span class="stag">AWS IAM</span><span class="stag">Git &amp; GitHub</span></div>
+        <div class="sk-card-top"><div class="sk-icon">04</div><div class="sk-index">INSIGHTS</div></div>
+        <div class="sk-cat">Data Analytics</div>
+        <div class="sk-tags"><span class="stag">Power BI</span><span class="stag">DAX</span><span class="stag">Excel</span><span class="stag">Power Query</span></div>
       </div>
       <div class="sk-card rev" style="transition-delay:.2s">
-        <div class="sk-icon">🛠️</div>
-        <div class="sk-cat">Tools &amp; Platforms</div>
-        <div class="sk-tags"><span class="stag">MS Excel</span><span class="stag">Power BI</span><span class="stag">IntelliJ</span><span class="stag">Eclipse</span><span class="stag">VS Code</span></div>
+        <div class="sk-card-top"><div class="sk-icon">05</div><div class="sk-index">BUILD</div></div>
+        <div class="sk-cat">Web Development</div>
+        <div class="sk-tags"><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">JavaScript</span><span class="stag">React</span><span class="stag">Vite</span></div>
       </div>
       <div class="sk-card rev" style="transition-delay:.24s">
-        <div class="sk-icon">📊</div>
-        <div class="sk-cat">Data Science</div>
-        <div class="sk-tags"><span class="stag">Pandas</span><span class="stag">NumPy</span><span class="stag">Matplotlib</span><span class="stag">Seaborn</span><span class="stag">EDA</span></div>
+        <div class="sk-card-top"><div class="sk-icon">06</div><div class="sk-index">STORAGE</div></div>
+        <div class="sk-cat">Databases</div>
+        <div class="sk-tags"><span class="stag">MongoDB</span><span class="stag">MySQL</span><span class="stag">DuckDB</span></div>
       </div>
       <div class="sk-card rev" style="transition-delay:.28s">
-        <div class="sk-icon">🧠</div>
-        <div class="sk-cat">Soft Skills</div>
-        <div class="sk-tags"><span class="stag">Leadership</span><span class="stag">Team Work</span><span class="stag">Problem-Solving</span><span class="stag">Adaptability</span></div>
+        <div class="sk-card-top"><div class="sk-icon">07</div><div class="sk-index">SCALE</div></div>
+        <div class="sk-cat">Big Data</div>
+        <div class="sk-tags"><span class="stag">Apache Spark</span><span class="stag">PySpark</span><span class="stag">Scala</span></div>
       </div>
       <div class="sk-card rev" style="transition-delay:.32s">
-        <div class="sk-icon">🚀</div>
-        <div class="sk-cat">Currently Learning</div>
-        <div class="sk-tags">
-          <span class="stag learning">Spring Boot</span>
-          <span class="stag learning">Docker</span>
-          <span class="stag learning">MongoDB</span>
-        </div>
+        <div class="sk-card-top"><div class="sk-icon">08</div><div class="sk-index">WORKFLOW</div></div>
+        <div class="sk-cat">Tools</div>
+        <div class="sk-tags"><span class="stag">Git</span><span class="stag">GitHub</span><span class="stag">VS Code</span><span class="stag">Jupyter</span></div>
       </div>
     </div>
   </div>
@@ -1015,78 +1079,85 @@ footer a:hover{color:var(--cyan);}
       <div class="sh-line"></div>
       <div class="sh-tag">Most Important</div>
     </div>
-    <div class="proj-grid">
-      <div class="proj-card rev">
+    <div class="project-showcase">
+      <article class="proj-card featured rev">
+        <div class="project-media ai-visual"><span class="project-media-label">Evidence-driven response</span></div>
         <div class="proj-body">
-          <div class="proj-top-row">
-            <span class="proj-idx">01 / 03</span>
-            <div class="proj-link-row">
-              <a href="https://github.com/mdzakizafar" target="_blank" class="plink">GH</a>
-              <a href="#" class="plink">↗</a>
-            </div>
-          </div>
-          <div class="proj-title">Billing &amp; Inventory Management System</div>
-          <div class="proj-desc">Desktop app automating stock management, sales tracking, and invoice generation for small businesses — replacing manual spreadsheets entirely.</div>
-          <ul class="proj-feats">
-            <li>Full CRUD with input validation &amp; error handling</li>
-            <li>Real-time inventory updates &amp; auto sales reports</li>
-            <li>Invoice generation with formatted print support</li>
-          </ul>
+          <div class="proj-top-row"><span class="proj-idx">01 / 05 · FEATURED</span></div>
+          <div class="project-problem">Problem: incident response is fragmented</div>
+          <h3 class="proj-title">AI Incident Commander</h3>
+          <p class="proj-desc">An AI-powered incident investigation and response system for structured, explainable decision support.</p>
+          <p class="project-solution"><strong>Solution:</strong> Competing hypotheses, evidence collection, red-team falsification, human approval, and post-action verification in one workflow.</p>
         </div>
-        <div class="proj-foot">
-          <div class="proj-date">July 2025</div>
-          <div class="proj-stack"><span class="pchip">Java</span><span class="pchip">Swing</span><span class="pchip">MySQL</span><span class="pchip">JDBC</span><span class="pchip">AWT</span></div>
-        </div>
-      </div>
+        <div class="proj-foot"><div class="proj-stack"><span class="pchip">React</span><span class="pchip">Python</span><span class="pchip">AI</span><span class="pchip">REST API</span></div><div class="project-actions"><button class="project-action details-trigger" type="button" data-project="incident">View Details</button><a class="project-action primary" href="https://github.com/mdzakizafar/ai-incident-commander" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="project-action" href="https://ai-incident-commander-gamma.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a></div></div>
+      </article>
 
-      <div class="proj-card rev" style="transition-delay:.1s">
+      <article class="proj-card featured rev" style="transition-delay:.1s">
+        <div class="project-media"><img src="https://raw.githubusercontent.com/mdzakizafar/AgroBuddy/main/images/Command%20Center.png" alt="AgroBuddy command center dashboard" width="1920" height="1200" loading="lazy" decoding="async"><span class="project-media-label">Mandi-to-market intelligence</span></div>
         <div class="proj-body">
-          <div class="proj-top-row">
-            <span class="proj-idx">02 / 03</span>
-            <div class="proj-link-row">
-              <a href="https://github.com/mdzakizafar" target="_blank" class="plink">GH</a>
-              <a href="#" class="plink">↗</a>
-            </div>
-          </div>
-          <div class="proj-title">Kid-Tutor AI Powered Adaptive Quiz Platform </div>
-          <div class="proj-desc">Intelligent quiz platform using the Gemini API to generate dynamic topic-based MCQs — solving the problem of manually writing test questions.</div>
-          <ul class="proj-feats">
-            <li>Gemini API integration for auto MCQ generation</li>
-            <li>Timed tests with live scoring &amp; leaderboard</li>
-            <li>Fully responsive design across all devices</li>
-          </ul>
+          <div class="proj-top-row"><span class="proj-idx">02 / 05 · FEATURED</span></div>
+          <div class="project-problem">Problem: raw agriculture data lacks context</div>
+          <h3 class="proj-title">AgroBuddy</h3>
+          <p class="proj-desc">An agriculture-focused application combining mandi arrivals, prices, logistics, weather, and AI-assisted analysis.</p>
+          <p class="project-solution"><strong>Solution:</strong> Rescued datasets, DuckDB analytics, operational dashboards, forecasting, and a grounded natural-language decision copilot.</p>
         </div>
-        <div class="proj-foot">
-          <div class="proj-date">April 2025</div>
-          <div class="proj-stack"><span class="pchip">React JS</span><span class="pchip">Node JS</span><span class="pchip">Gemini API</span><span class="pchip">JavaScript</span></div>
-        </div>
-      </div>
+        <div class="proj-foot"><div class="proj-stack"><span class="pchip">React</span><span class="pchip">Python</span><span class="pchip">DuckDB</span><span class="pchip">Data Analytics</span></div><div class="project-actions"><button class="project-action details-trigger" type="button" data-project="agrobuddy">View Details</button><a class="project-action primary" href="https://github.com/mdzakizafar/AgroBuddy" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="project-action" href="https://agro-buddy-psi.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a></div></div>
+      </article>
 
-      <div class="proj-card rev" style="transition-delay:.2s">
+      <article class="proj-card featured rev" style="transition-delay:.2s">
+        <div class="project-media learning-visual"><span class="project-media-label">Adaptive learning loop</span></div>
         <div class="proj-body">
-          <div class="proj-top-row">
-            <span class="proj-idx">03 / 03</span>
-            <div class="proj-link-row">
-              <a href="https://github.com/mdzakizafar" target="_blank" class="plink">GH</a>
-              <a href="#" class="plink">↗</a>
-            </div>
-          </div>
-          <div class="proj-title">Heart Disease Analysis — Python EDA</div>
-          <div class="proj-desc">EDA on authoritative government heart disease data to surface hidden patterns — enabling early risk assessment before ML model development.</div>
-          <ul class="proj-feats">
-            <li>Data cleaning pipelines &amp; outlier detection</li>
-            <li>Correlation analysis &amp; statistical visualizations</li>
-            <li>Actionable insights report for healthcare context</li>
-          </ul>
+          <div class="proj-top-row"><span class="proj-idx">03 / 05 · FEATURED</span></div>
+          <div class="project-problem">Problem: one-size-fits-all quizzes limit learning</div>
+          <h3 class="proj-title">Kid Tutor Learning App</h3>
+          <p class="proj-desc">An adaptive AI-powered learning and quiz application designed to make practice more personalized and engaging.</p>
+          <p class="project-solution"><strong>Solution:</strong> Gemini-generated topic quizzes, difficulty adjustment, instant feedback, explanations, progress tracking, and leaderboards.</p>
         </div>
-        <div class="proj-foot">
-          <div class="proj-date">March 2025</div>
-          <div class="proj-stack"><span class="pchip">Python</span><span class="pchip">Pandas</span><span class="pchip">NumPy</span><span class="pchip">Matplotlib</span><span class="pchip">Seaborn</span></div>
+        <div class="proj-foot"><div class="proj-stack"><span class="pchip">React</span><span class="pchip">JavaScript</span><span class="pchip">Gemini API</span></div><div class="project-actions"><button class="project-action details-trigger" type="button" data-project="kid-tutor">View Details</button><a class="project-action primary" href="https://github.com/mdzakizafar/kid-tutor-learning-app" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="project-action" href="https://kid-tutor-learning-app.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a></div></div>
+      </article>
+
+      <article class="proj-card rev" style="transition-delay:.1s">
+        <div class="project-media ev-visual"><span class="project-media-label">Power BI dashboard</span></div>
+        <div class="proj-body">
+          <div class="proj-top-row"><span class="proj-idx">04 / 05</span></div>
+          <div class="project-problem">Problem: EV adoption data is difficult to explore</div>
+          <h3 class="proj-title">Electric Vehicle Analysis Dashboard</h3>
+          <p class="proj-desc">A dashboard and analysis project exploring electric vehicle adoption, manufacturers, models, range, and geography.</p>
+          <p class="project-solution"><strong>Solution:</strong> Cleaned data, Power Query transformations, DAX measures, interactive filters, maps, KPIs, and trend visualizations.</p>
         </div>
-      </div>
+        <div class="proj-foot"><div class="proj-stack"><span class="pchip">Python</span><span class="pchip">Power BI</span><span class="pchip">Data Analytics</span></div><div class="project-actions"><button class="project-action details-trigger" type="button" data-project="ev-dashboard">View Details</button><a class="project-action primary" href="https://github.com/mdzakizafar/Electric-Vehicle-Analysis-Dashboard" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+      </article>
+
+      <article class="proj-card rev" style="transition-delay:.2s">
+        <div class="project-media"><img src="https://raw.githubusercontent.com/mdzakizafar/Billing-and-Inventory-Management-System/main/logo.jpg" alt="Billing and inventory management system logo" width="225" height="225" loading="lazy" decoding="async"><span class="project-media-label">Desktop application</span></div>
+        <div class="proj-body">
+          <div class="proj-top-row"><span class="proj-idx">05 / 05</span></div>
+          <div class="project-problem">Problem: day-to-day billing needs a faster workflow</div>
+          <h3 class="proj-title">Billing &amp; Inventory Management System</h3>
+          <p class="proj-desc">A Java-based billing and inventory management application for organized product and invoice workflows.</p>
+          <p class="project-solution"><strong>Solution:</strong> Java Swing screens for login, product-based billing, discounts, tax, totals, and print-ready invoices.</p>
+        </div>
+        <div class="proj-foot"><div class="proj-stack"><span class="pchip">Java</span><span class="pchip">Swing / AWT</span><span class="pchip">OOP</span><span class="pchip">Print / PDF</span></div><div class="project-actions"><button class="project-action details-trigger" type="button" data-project="billing">View Details</button><a class="project-action primary" href="https://github.com/mdzakizafar/Billing-and-Inventory-Management-System" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+      </article>
     </div>
   </div>
 </section>
+
+<div class="project-modal" id="project-modal" hidden role="dialog" aria-modal="true" aria-labelledby="project-modal-title" aria-describedby="project-modal-description">
+  <div class="project-modal-panel" role="document">
+    <div class="project-modal-head">
+      <div><div class="project-modal-kicker" id="project-modal-kicker">Project Details</div><h2 class="project-modal-title" id="project-modal-title">Project details</h2></div>
+      <button class="project-modal-close" id="project-modal-close" type="button" aria-label="Close project details">&times;</button>
+    </div>
+    <div class="project-modal-body">
+      <div class="project-modal-section"><div class="project-modal-label">Problem</div><p class="project-modal-copy" id="project-modal-problem"></p></div>
+      <div class="project-modal-section"><div class="project-modal-label">Solution</div><p class="project-modal-copy" id="project-modal-description"></p></div>
+      <div class="project-modal-section"><div class="project-modal-label">Key Features</div><ul class="project-modal-features" id="project-modal-features"></ul></div>
+      <div class="project-modal-section"><div class="project-modal-label">Technology Stack</div><div class="project-modal-stack" id="project-modal-stack"></div></div>
+      <div class="project-modal-actions"><a class="project-action primary" id="project-modal-github" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="project-action" id="project-modal-demo" target="_blank" rel="noopener noreferrer">Live Demo ↗</a></div>
+    </div>
+  </div>
+</div>
 
 <!-- ══════════════════════ EXPERIENCE (05) ══════════════════════ -->
 <section id="experience">
@@ -1271,41 +1342,40 @@ footer a:hover{color:var(--cyan);}
   </div>
 </section>
 
-<!-- ══════════════════════ OPEN SOURCE (09) ══════════════════════ -->
-<section id="opensource">
+<!-- ══════════════════════ GITHUB (09) ══════════════════════ -->
+<section id="github">
   <div class="wrap">
     <div class="sh rev">
       <div class="sh-num">// 09</div>
-      <h2 class="sh-title">Open Source</h2>
+      <h2 class="sh-title">GitHub</h2>
       <div class="sh-line"></div>
-      <div class="sh-tag">GitHub Activity</div>
+      <div class="sh-tag">Code In Public</div>
     </div>
-    <div class="os-note rev">
-      <span class="os-note-icon">💡</span>
-      <p>Open source contributions are actively in progress. All projects are <strong>publicly available on GitHub</strong> with full READMEs, clean documented code, and structured repositories for the community.</p>
-    </div>
-    <div class="os-grid rev">
-      <div class="os-card">
-        <div class="os-icon">📦</div>
-        <div class="os-title">Public Repositories</div>
-        <div class="os-desc">All 3 major projects are open-sourced on GitHub with clear documentation, setup guides, and well-structured codebases available for community reference and contribution.</div>
+    <div class="github-layout rev">
+      <div class="github-intro">
+        <div class="github-mark"><span class="github-mark-icon">GH</span> Md Zaki Zafar / GitHub</div>
+        <h3 class="github-heading">Projects, experiments, and engineering notes.</h3>
+        <p class="github-copy">My public work lives on <strong>github.com/mdzakizafar</strong>, from AI systems and data applications to dashboards and Java desktop software.</p>
+        <div class="github-repos">
+          <a class="github-repo" href="https://github.com/mdzakizafar/ai-incident-commander" target="_blank" rel="noopener noreferrer"><span>AI Incident Commander</span><span>Python</span></a>
+          <a class="github-repo" href="https://github.com/mdzakizafar/AgroBuddy" target="_blank" rel="noopener noreferrer"><span>AgroBuddy</span><span>React</span></a>
+          <a class="github-repo" href="https://github.com/mdzakizafar/kid-tutor-learning-app" target="_blank" rel="noopener noreferrer"><span>Kid Tutor</span><span>JavaScript</span></a>
+          <a class="github-repo" href="https://github.com/mdzakizafar/Electric-Vehicle-Analysis-Dashboard" target="_blank" rel="noopener noreferrer"><span>EV Dashboard</span><span>Power BI</span></a>
+          <a class="github-repo" href="https://github.com/mdzakizafar/Billing-and-Inventory-Management-System" target="_blank" rel="noopener noreferrer"><span>Billing System</span><span>Java</span></a>
+        </div>
+        <a class="btn-ghost github-profile-button" href="https://github.com/mdzakizafar" target="_blank" rel="noopener noreferrer">View GitHub Profile ↗</a>
       </div>
-      <div class="os-card">
-        <div class="os-icon">📝</div>
-        <div class="os-title">READMEs &amp; Docs</div>
-        <div class="os-desc">Every repository includes a comprehensive README covering setup instructions, screenshots, tech stack breakdown, feature list, and usage examples.</div>
-      </div>
-      <div class="os-card">
-        <div class="os-icon">🔭</div>
-        <div class="os-title">Contributing in 2026</div>
-        <div class="os-desc">Actively exploring open source opportunities in Java and Python ecosystems. Looking to contribute meaningful PRs to real-world projects in 2026.</div>
-      </div>
-    </div>
-    <div class="os-cta rev">
-      <div class="os-quote">"Code in the open, grow in public — let your <span>GitHub</span> tell your story."</div>
-      <div class="os-btns">
-        <a href="https://github.com/mdzakizafar" target="_blank" class="btn-ghost">View GitHub Profile →</a>
-        <a href="https://github.com/mdzakizafar" target="_blank" class="btn-sec">Browse Repositories</a>
+      <div class="github-activity">
+        <div class="github-activity-title"><span>Activity signal</span><span class="github-activity-label">No live API</span></div>
+        <p class="github-activity-copy">A lightweight view of the work represented in this portfolio. Open GitHub for live contribution history and repository activity.</p>
+        <div class="github-activity-list" aria-label="Featured project activity areas">
+          <div class="github-activity-row"><span class="github-activity-dot"></span><span>AI systems and incident workflows</span><span>AI</span></div>
+          <div class="github-activity-row"><span class="github-activity-dot"></span><span>Data applications and analytics</span><span>DATA</span></div>
+          <div class="github-activity-row"><span class="github-activity-dot"></span><span>Adaptive learning experiences</span><span>WEB</span></div>
+          <div class="github-activity-row"><span class="github-activity-dot"></span><span>Dashboards and business intelligence</span><span>BI</span></div>
+          <div class="github-activity-row"><span class="github-activity-dot"></span><span>Java desktop applications</span><span>JAVA</span></div>
+        </div>
+        <div class="github-activity-note">This visual intentionally shows focus areas instead of fabricated contribution counts.</div>
       </div>
     </div>
   </div>
@@ -1335,10 +1405,10 @@ footer a:hover{color:var(--cyan);}
           <a href="tel:+917364804400" class="clink">
             <span class="ci-ic">☎</span><span>+91-7364804400</span><span class="ci-arr">→</span>
           </a>
-          <a href="https://www.linkedin.com/in/md-zaki-zafar-" target="_blank" class="clink">
+          <a href="https://www.linkedin.com/in/md-zaki-zafar-" target="_blank" rel="noopener noreferrer" class="clink">
             <span class="ci-ic">in</span><span>linkedin.com/in/md-zaki-zafar-</span><span class="ci-arr">→</span>
           </a>
-          <a href="https://github.com/mdzakizafar" target="_blank" class="clink">
+          <a href="https://github.com/mdzakizafar" target="_blank" rel="noopener noreferrer" class="clink">
             <span class="ci-ic">GH</span><span>github.com/mdzakizafar</span><span class="ci-arr">→</span>
           </a>
           <div class="clink" style="cursor:default;">
@@ -1353,16 +1423,19 @@ footer a:hover{color:var(--cyan);}
   <form action="https://formsubmit.co/mdzakizafar7364@gmail.com" method="POST" class="cform">
 
     <div class="frow">
-      <input class="finp" type="text" name="name" placeholder="Your Name" required>
-      <input class="finp" type="email" name="email" placeholder="Your Email" required>
+      <label class="sr-only" for="contact-name">Your name</label>
+      <input class="finp" id="contact-name" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+      <label class="sr-only" for="contact-email">Your email</label>
+      <input class="finp" id="contact-email" type="email" name="email" placeholder="Your Email" autocomplete="email" required>
     </div>
 
-    <input class="finp" type="text" name="subject" placeholder="Subject">
+    <label class="sr-only" for="contact-subject">Subject</label>
+    <input class="finp" id="contact-subject" type="text" name="subject" placeholder="Subject">
 
-    <textarea class="finp" name="message" placeholder="Your message..." required></textarea>
+    <label class="sr-only" for="contact-message">Your message</label>
+    <textarea class="finp" id="contact-message" name="message" placeholder="Your message..." required></textarea>
 
     <!-- hidden settings -->
-    <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
 
     <button type="submit" class="fsub">Send Message →</button>
@@ -1378,6 +1451,8 @@ footer a:hover{color:var(--cyan);}
   </div>
 </section>
 
+</main>
+
 <!-- ══════════════════════ FOOTER ══════════════════════ -->
 <footer>
   <div>© 2025 <span class="footer-grad">Md Zaki Zafar</span> · All rights reserved</div>
@@ -1385,8 +1460,8 @@ footer a:hover{color:var(--cyan);}
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#certs">Certs</a>
-    <a href="https://github.com/mdzakizafar" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/md-zaki-zafar-" target="_blank">LinkedIn</a>
+    <a href="https://github.com/mdzakizafar" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/md-zaki-zafar-" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
   <div>Built with ❤️ · <span class="footer-grad">CSE @ LPU</span></div>
 </footer>
@@ -1395,16 +1470,27 @@ footer a:hover{color:var(--cyan);}
 <script>
 /* ── CURSOR ── */
 const dot=document.getElementById('cdot'),ring=document.getElementById('cring');
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasFinePointer=window.matchMedia('(pointer: fine)').matches;
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
-(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+if(hasFinePointer){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+  if(!prefersReducedMotion)(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+}
 document.querySelectorAll('a,button,.sk-card,.proj-card,.cert-item,.ach-card,.kpi,.edu-card,.os-card,.exp-wrap,.clink').forEach(el=>{
   el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
   el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
 });
 
 /* ── NAVBAR ── */
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>55));
+const nav=document.getElementById('nav');
+const navToggle=document.getElementById('nav-toggle');
+const closeNav=()=>{nav.classList.remove('menu-open');navToggle.setAttribute('aria-expanded','false');navToggle.setAttribute('aria-label','Open navigation menu');};
+navToggle.addEventListener('click',()=>{const open=nav.classList.toggle('menu-open');navToggle.setAttribute('aria-expanded',String(open));navToggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');});
+nav.querySelectorAll('.nlinks a').forEach(link=>link.addEventListener('click',closeNav));
+window.addEventListener('resize',()=>{if(innerWidth>960)closeNav();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&nav.classList.contains('menu-open')){event.preventDefault();closeNav();navToggle.focus();}});
+window.addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>55));
 
 /* ── PARTICLE CANVAS ── */
 const cv=document.getElementById('bgc'),ctx=cv.getContext('2d');
@@ -1417,14 +1503,15 @@ class P{
   update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W)this.vx*=-1;if(this.y<0||this.y>H)this.vy*=-1;}
   draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,229,255,${this.a})`;ctx.fill();}
 }
-for(let i=0;i<110;i++)pts.push(new P());
+const particleCount=prefersReducedMotion?0:(innerWidth<700?35:70);
+for(let i=0;i<particleCount;i++)pts.push(new P());
 const drawLines=()=>{
   for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
     const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.hypot(dx,dy);
     if(d<125){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(0,229,255,${.1*(1-d/125)})`;ctx.lineWidth=.45;ctx.stroke();}
   }
 };
-(function anim(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.update();p.draw();});drawLines();requestAnimationFrame(anim);})();
+if(!prefersReducedMotion)(function anim(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.update();p.draw();});drawLines();requestAnimationFrame(anim);})();
 
 /* ── SCROLL REVEAL ── */
 const obs=new IntersectionObserver(entries=>{
@@ -1452,11 +1539,12 @@ document.querySelectorAll('.sk-card,.edu-card').forEach(c=>{
   });
 });
 
-/* ── TYPING EFFECT ── */
-const phrases=['exploring new ideas...','open to internships →','building cool things ✦','always learning...'];
+/* ── HERO ROLE EFFECT ── */
+const phrases=['Data Science & AI Developer','Data Scientist','AI/ML Developer','Full Stack Developer'];
 let pi=0,ci=0,fwd=true,wait=0;
-const tel=document.getElementById('ttext');
+const tel=document.getElementById('hero-role');
 function type(){
+  if(!tel)return;
   if(wait>0){wait--;setTimeout(type,50);return;}
   if(fwd){tel.textContent=phrases[pi].slice(0,++ci);if(ci===phrases[pi].length){fwd=false;wait=48;}}
   else{tel.textContent=phrases[pi].slice(0,--ci);if(ci===0){fwd=true;pi=(pi+1)%phrases.length;wait=20;}}
@@ -1464,12 +1552,107 @@ function type(){
 }
 type();
 
+/* ── PROJECT DETAILS MODAL ── */
+const projectDetails={
+  incident:{
+    title:'AI Incident Commander',
+    problem:'Incident response often requires engineers to manually correlate logs, metrics, code changes, historical incidents, and runbooks.',
+    solution:'An evidence-driven investigation workflow that generates competing hypotheses, challenges the leading explanation, recommends a response, and verifies the result.',
+    features:['Automated incident investigation','Competing root-cause hypotheses','Supporting and contradicting evidence','Red-team falsification','Human approval for risk-sensitive actions','Post-action verification'],
+    stack:['React','Python','AI','REST API'],
+    github:'https://github.com/mdzakizafar/ai-incident-commander',
+    demo:'https://ai-incident-commander-gamma.vercel.app/'
+  },
+  agrobuddy:{
+    title:'AgroBuddy',
+    problem:'Agricultural supply-chain records arrive with inconsistent names, units, dates, prices, and logistics data that make raw dashboards unreliable.',
+    solution:'A data-driven agriculture intelligence platform that rescues messy records, runs deterministic analytics, and gives users a grounded AI decision copilot.',
+    features:['Data rescue and normalization workflows','Mandi arrivals and price intelligence','Logistics and weather operations views','DuckDB analytical engine','Arrival forecasting pipeline','Natural-language AI copilot'],
+    stack:['React','Python','DuckDB','Data Analytics'],
+    github:'https://github.com/mdzakizafar/AgroBuddy',
+    demo:'https://agro-buddy-psi.vercel.app/'
+  },
+  'kid-tutor':{
+    title:'Kid Tutor Learning App',
+    problem:'Static, one-size-fits-all quizzes make it harder for students to practice at an appropriate level and understand incorrect answers.',
+    solution:'An adaptive learning platform that generates topic-based quizzes with Gemini, adjusts difficulty from performance, and provides immediate explanations and progress feedback.',
+    features:['Gemini-generated topic quizzes','Adaptive difficulty levels','Instant answer feedback','AI-generated explanations','Progress tracking and scoring','Student leaderboard'],
+    stack:['React','JavaScript','Gemini API'],
+    github:'https://github.com/mdzakizafar/kid-tutor-learning-app',
+    demo:'https://kid-tutor-learning-app.vercel.app/'
+  },
+  'ev-dashboard':{
+    title:'Electric Vehicle Analysis Dashboard',
+    problem:'Electric-vehicle datasets contain adoption, manufacturer, model, range, and location patterns that are difficult to explore in raw tabular form.',
+    solution:'An interactive Power BI dashboard that transforms the dataset into filterable KPIs, charts, maps, and analysis of EV adoption trends.',
+    features:['Vehicle adoption analysis','BEV and PHEV comparison','Manufacturer and model analysis','Model-year trend exploration','Geographic distribution views','Power Query and DAX transformations'],
+    stack:['Python','Power BI','Data Analytics'],
+    github:'https://github.com/mdzakizafar/Electric-Vehicle-Analysis-Dashboard'
+  },
+  billing:{
+    title:'Billing & Inventory Management System',
+    problem:'Everyday billing workflows need an organized way to manage products, calculate totals, and produce usable invoices.',
+    solution:'A Java desktop application with a Swing interface for product billing, authentication, discounts, tax calculations, totals, and print-ready invoice output.',
+    features:['Product-based billing','Login and signup access system','Discount and tax calculations','Java Swing and AWT interface','Print-ready invoice output','Core Java OOP structure'],
+    stack:['Java','Swing / AWT','OOP','Print / PDF'],
+    github:'https://github.com/mdzakizafar/Billing-and-Inventory-Management-System'
+  }
+};
+const projectModal=document.getElementById('project-modal');
+const projectModalPanel=projectModal.querySelector('.project-modal-panel');
+const projectModalClose=document.getElementById('project-modal-close');
+const projectModalTitle=document.getElementById('project-modal-title');
+const projectModalProblem=document.getElementById('project-modal-problem');
+const projectModalDescription=document.getElementById('project-modal-description');
+const projectModalFeatures=document.getElementById('project-modal-features');
+const projectModalStack=document.getElementById('project-modal-stack');
+const projectModalGithub=document.getElementById('project-modal-github');
+const projectModalDemo=document.getElementById('project-modal-demo');
+let lastFocusedProjectTrigger=null;
+let modalCloseTimer=null;
+
+function openProjectModal(projectKey,trigger){
+  const project=projectDetails[projectKey];
+  if(!project)return;
+  lastFocusedProjectTrigger=trigger;
+  projectModalTitle.textContent=project.title;
+  projectModalProblem.textContent=project.problem;
+  projectModalDescription.textContent=project.solution;
+  projectModalFeatures.replaceChildren(...project.features.map(feature=>{const item=document.createElement('li');item.textContent=feature;return item;}));
+  projectModalStack.replaceChildren(...project.stack.map(technology=>{const badge=document.createElement('span');badge.className='pchip';badge.textContent=technology;return badge;}));
+  projectModalGithub.href=project.github;
+  if(project.demo){projectModalDemo.href=project.demo;projectModalDemo.hidden=false;}else{projectModalDemo.hidden=true;projectModalDemo.removeAttribute('href');}
+  clearTimeout(modalCloseTimer);
+  projectModal.hidden=false;
+  document.body.classList.add('modal-open');
+  requestAnimationFrame(()=>projectModal.classList.add('is-open'));
+  projectModalClose.focus();
+}
+function closeProjectModal(){
+  if(projectModal.hidden)return;
+  projectModal.classList.remove('is-open');
+  document.body.classList.remove('modal-open');
+  modalCloseTimer=setTimeout(()=>{projectModal.hidden=true;lastFocusedProjectTrigger?.focus();},260);
+}
+document.querySelectorAll('.details-trigger').forEach(trigger=>trigger.addEventListener('click',()=>openProjectModal(trigger.dataset.project,trigger)));
+projectModalClose.addEventListener('click',closeProjectModal);
+projectModal.addEventListener('click',event=>{if(event.target===projectModal)closeProjectModal();});
+document.addEventListener('keydown',event=>{
+  if(projectModal.hidden)return;
+  if(event.key==='Escape'){event.preventDefault();closeProjectModal();return;}
+  if(event.key!=='Tab')return;
+  const focusable=[projectModalClose,...projectModalPanel.querySelectorAll('a[href]:not([hidden])')];
+  const first=focusable[0],last=focusable[focusable.length-1];
+  if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+  else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+});
+
 /* ── SMOOTH SCROLL ── */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     e.preventDefault();
     const t=document.querySelector(a.getAttribute('href'));
-    if(t)t.scrollIntoView({behavior:'smooth'});
+    if(t)t.scrollIntoView({behavior:prefersReducedMotion?'auto':'smooth'});
   });
 });
 </script>
