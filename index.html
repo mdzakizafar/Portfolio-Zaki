@@ -329,7 +329,7 @@ nav.stuck{
    SHARED SECTION STYLES
 ════════════════════════════════════════ */
 section{position:relative;z-index:2;}
-.wrap{max-width:1180px;margin:0 auto;padding:5.5rem 3rem;}
+.wrap{width:90%;max-width:1280px;margin:0 auto;padding:5rem 0;}
 
 .sh{display:flex;align-items:center;gap:1.2rem;margin-bottom:3.5rem;}
 .sh-num{
@@ -401,12 +401,12 @@ section{position:relative;z-index:2;}
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1);}
 .sk-card{
   background:var(--card);padding:1.45rem;position:relative;overflow:hidden;
-  transition:background .3s,transform .3s;cursor:default;
+  gap:1.2rem;
 }
 .sk-card::after{
   content:'';position:absolute;top:0;left:0;width:100%;height:2px;
   background:linear-gradient(to right,var(--cyan),var(--violet));transform:scaleX(0);
-  transform-origin:left;transition:transform .3s;
+  transition:transform .28s;transform-origin:left;
 }
 .sk-card:hover{background:var(--card2);transform:translateY(-4px);box-shadow:0 16px 35px rgba(0,0,0,.25);z-index:1;}
 .sk-card:hover::after{transform:scaleX(1);}
@@ -596,19 +596,32 @@ body.modal-open{overflow:hidden;}
    CERTIFICATIONS  (Section 07)
 ════════════════════════════════════════ */
 #certs{background:var(--bg0);}
+#certs .sh{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1.2rem;}
+#certs .sh-title{text-align:center;}
+#certs .sh-line{display:none;}
+#certs .cert-subtitle{text-align:center;color:var(--txt3);font-size:.82rem;line-height:1.6;margin:-1.8rem auto 2.4rem;}
 .certs-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:var(--b1);
+  grid-auto-rows:1fr;
+  gap:1.2rem;
+}
+.cert-item{
+  min-width:0;height:100%;display:flex;flex-direction:column;
+  background:var(--card);border:1px solid var(--b1);border-radius:16px;
+  overflow:hidden;position:relative;transition:transform .3s,border-color .3s,box-shadow .3s;
 }
 .cert-item::before{
   content:'';position:absolute;left:0;top:0;bottom:0;
-  width:2.5px;background:var(--grad-head);
+  width:3px;background:var(--grad-head);z-index:1;
   transform:scaleY(0);transition:transform .28s;transform-origin:bottom;
 }
-.cert-item:hover{background:var(--bg1);}
+.cert-item:hover{background:var(--bg1);border-color:rgba(167,139,250,.45);transform:translateY(-7px);box-shadow:0 18px 45px rgba(0,0,0,.38),0 0 28px rgba(124,58,237,.12);}
 .cert-item:hover::before{transform:scaleY(1);}
+.cert-preview{height:220px;background:#f5f5f5;border-bottom:1px solid var(--b1);overflow:hidden;padding:.7rem;}
+.cert-preview img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .45s ease;}
+.cert-item:hover .cert-preview img{transform:scale(1.035);}
+.cert-content{display:flex;flex:1;flex-direction:column;padding:1.2rem 1.25rem 1.3rem;}
 .cert-icon{
   width:42px;height:42px;flex-shrink:0;
   border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;
@@ -616,16 +629,19 @@ body.modal-open{overflow:hidden;}
 }
 .cert-item:hover .cert-icon{border-color:var(--cyan);}
 .cert-name{
-  font-size:.78rem;font-weight:600;color:var(--txt);
-  line-height:1.4;margin-bottom:.22rem;transition:color .2s;
+  font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--txt);
+  line-height:1.3;margin-bottom:.4rem;transition:color .2s;
 }
 .cert-item:hover .cert-name{color:var(--cyan);}
-.cert-by{font-size:.62rem;font-weight:400;color:var(--txt3);letter-spacing:.03em;}
+.cert-by{font-size:.68rem;font-weight:600;color:var(--cyan);letter-spacing:.03em;margin-bottom:.55rem;}
+.cert-desc{font-size:.72rem;font-weight:400;color:var(--txt3);line-height:1.6;margin-bottom:1rem;}
 .cert-domain{
-  display:inline-block;margin-top:.35rem;
+  display:inline-block;margin-top:auto;margin-bottom:1rem;width:fit-content;
   font-size:.53rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.15rem .55rem;border:1px solid var(--b2);color:var(--txt3);
 }
+.cert-link{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;width:100%;padding:.65rem .8rem;border:1px solid rgba(0,229,255,.3);border-radius:8px;color:var(--cyan);font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s,border-color .2s,color .2s;}
+.cert-link:hover{background:rgba(0,229,255,.1);border-color:var(--cyan);color:var(--txt);}
 
 /* ════════════════════════════════════════
    ACHIEVEMENTS  (Section 08)
@@ -866,6 +882,7 @@ footer a:hover{color:var(--cyan);}
   .project-showcase{grid-template-columns:1fr;}
   .proj-card,.proj-card.featured{grid-column:span 1;}
   .proj-grid,.edu-grid,.ach-grid,.os-grid{grid-template-columns:1fr;}
+  .certs-grid{grid-template-columns:repeat(2,1fr);}
   .exp-wrap{grid-template-columns:1fr;}
   .exp-l{border-right:none;border-bottom:1px solid var(--b1);}
   .frow{grid-template-columns:1fr;}
@@ -883,6 +900,7 @@ footer a:hover{color:var(--cyan);}
   .project-modal-head,.project-modal-body{padding-left:1rem;padding-right:1rem;}
   .project-modal-features{grid-template-columns:1fr;}
   .github-repos{grid-template-columns:1fr;}
+  .certs-grid{grid-template-columns:1fr;}
   .contact-grid>*{min-width:0;}
   .frow,.finp{min-width:0;}
   .footer-links{flex-wrap:wrap;justify-content:center;gap:.75rem 1rem;}
@@ -892,6 +910,15 @@ footer a:hover{color:var(--cyan);}
   .hero-profile-bottom{grid-template-columns:1fr;}
   .hero-profile-status{justify-self:start;}
   .proj-card.featured .project-media{height:160px;}
+}
+@media(max-width:1023px) and (min-width:961px){
+  .certs-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:767.98px){
+  #certs .sh{grid-template-columns:auto minmax(0,1fr) auto;gap:.65rem;}
+  #certs .sh-title{font-size:1.55rem;}
+  #certs .cert-subtitle{margin-top:-1.2rem;}
+  .certs-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -1242,61 +1269,74 @@ footer a:hover{color:var(--cyan);}
       <div class="sh-line"></div>
       <div class="sh-tag">Industry Validated</div>
     </div>
+    <p class="cert-subtitle">Selected credentials and completed learning experiences.</p>
     <div class="certs-grid rev">
 
-  <div class="cert-item">
-    <div class="cert-icon">📊</div>
-    <div>
-      <div class="cert-name">Data Analytics Job Simulation</div>
-      <div class="cert-by">Deloitte Australia · Forage · Sep 2025</div>
-      <span class="cert-domain">Data Analytics</span>
-    </div>
-  </div>
+      <article class="cert-item">
+        <div class="cert-preview"><img src="assets/certifications/Deloitte Data Analytics Job Simulation.png" alt="Preview of Deloitte Data Analytics Job Simulation certificate" loading="lazy"></div>
+        <div class="cert-content">
+          <h3 class="cert-name">Data Analytics Job Simulation</h3>
+          <div class="cert-by">Deloitte · Forage</div>
+          <p class="cert-desc">Certificate of completion covering practical data analysis and forensic technology tasks.</p>
+          <span class="cert-domain">Data Analytics</span>
+          <a class="cert-link" href="assets/certifications/Deloitte Data Analytics Job Simulation.pdf" target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
 
-  <div class="cert-item">
-    <div class="cert-icon">💼</div>
-    <div>
-      <div class="cert-name">Software Engineering Job Simulation</div>
-      <div class="cert-by">J.P. Morgan Chase & Co · Forage · Aug 2025</div>
-      <span class="cert-domain">Software Engineering</span>
-    </div>
-  </div>
+      <article class="cert-item">
+        <div class="cert-preview"><img src="assets/certifications/JP Morgan Software Enginnering.png" alt="Preview of J.P. Morgan Software Engineering certificate" loading="lazy"></div>
+        <div class="cert-content">
+          <h3 class="cert-name">Software Engineering Job Simulation</h3>
+          <div class="cert-by">J.P. Morgan Chase &amp; Co. · Forage</div>
+          <p class="cert-desc">Certificate of completion covering project setup, Kafka, H2, and REST API integration tasks.</p>
+          <span class="cert-domain">Software Engineering</span>
+          <a class="cert-link" href="assets/certifications/JP Morgan Software Enginnering.pdf" target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
 
-  <div class="cert-item">
-    <div class="cert-icon">🏦</div>
-    <div>
-      <div class="cert-name">Intro to Data Science Simulation</div>
-      <div class="cert-by">Commonwealth Bank · Forage · Aug 2025</div>
-      <span class="cert-domain">Data Science</span>
-    </div>
-  </div>
+      <article class="cert-item">
+        <div class="cert-preview"><img src="assets/certifications/Forage data science.png" alt="Preview of Introduction to Data Science Job Simulation certificate" loading="lazy"></div>
+        <div class="cert-content">
+          <h3 class="cert-name">Introduction to Data Science Job Simulation</h3>
+          <div class="cert-by">Commonwealth Bank · Forage</div>
+          <p class="cert-desc">Certificate of completion covering data aggregation, anonymisation, database design, and analysis.</p>
+          <span class="cert-domain">Data Science</span>
+          <a class="cert-link" href="assets/certifications/Forage data science.pdf" target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
 
-  <div class="cert-item">
-    <div class="cert-icon">🌐</div>
-    <div>
-      <div class="cert-name">Bits and Bytes of Computer Networking</div>
-      <div class="cert-by">Google · Coursera · Sep 2024</div>
-      <span class="cert-domain">Networking</span>
-    </div>
-  </div>
+      <article class="cert-item">
+        <div class="cert-preview"><img src="assets/certifications/The Bits and Bytes of Computer Networking GOOGLE.png" alt="Preview of The Bits and Bytes of Computer Networking certificate" loading="lazy"></div>
+        <div class="cert-content">
+          <h3 class="cert-name">The Bits and Bytes of Computer Networking</h3>
+          <div class="cert-by">Google · Coursera</div>
+          <p class="cert-desc">Course certificate for foundational computer networking concepts and technologies.</p>
+          <span class="cert-domain">Networking</span>
+          <a class="cert-link" href="assets/certifications/The Bits and Bytes of Computer Networking GOOGLE.pdf" target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
 
-  <div class="cert-item">
-    <div class="cert-icon">🖥️</div>
-    <div>
-      <div class="cert-name">Intro to Hardware & Operating Systems</div>
-      <div class="cert-by">IBM · Coursera · Nov 2023</div>
-      <span class="cert-domain">Systems</span>
-    </div>
-  </div>
+      <article class="cert-item">
+        <div class="cert-preview"><img src="assets/certifications/Introduction to Hardware and Operating Systems.png" alt="Preview of Introduction to Hardware and Operating Systems certificate" loading="lazy"></div>
+        <div class="cert-content">
+          <h3 class="cert-name">Introduction to Hardware and Operating Systems</h3>
+          <div class="cert-by">IBM · Coursera</div>
+          <p class="cert-desc">Course certificate for introductory hardware and operating systems concepts.</p>
+          <span class="cert-domain">Systems</span>
+          <a class="cert-link" href="assets/certifications/Introduction to Hardware and Operating Systems.pdf" target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
 
-  <div class="cert-item">
-    <div class="cert-icon">🔐</div>
-    <div>
-      <div class="cert-name">Privacy and Security in Online Social Media</div>
-      <div class="cert-by">NPTEL · Jul–Oct 2025</div>
-      <span class="cert-domain">Cyber Security</span>
-    </div>
-  </div>
+      <article class="cert-item">
+        <div class="cert-preview"><img src="assets/certifications/Privacy and Security in Online Social Media.png" alt="Preview of Privacy and Security in Online Social Media certificate" loading="lazy"></div>
+        <div class="cert-content">
+          <h3 class="cert-name">Privacy and Security in Online Social Media</h3>
+          <div class="cert-by">NPTEL · SWAYAM</div>
+          <p class="cert-desc">NPTEL online certification covering privacy and security in online social media.</p>
+          <span class="cert-domain">Cyber Security</span>
+          <a class="cert-link" href="assets/certifications/Privacy and Security in Online Social Media.pdf" target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
 
 </div>
   
